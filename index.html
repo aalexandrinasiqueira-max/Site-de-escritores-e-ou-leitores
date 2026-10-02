@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Um Lar Para Escritores</title> 
+    <!-- Importação de ícones para a barra de pesquisa e formulários -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css?v=4"> 
+</head> 
+<body> 
+
+    <!-- Palco 3D onde o livro vai girar -->
+    <div class="cenario-3d">
+        <!-- O livro que contém a Frente (Home) e o Verso (Cadastro) -->
+        <div class="livro-container" id="livro">
+            
+            /* ==========================================================================
+               FRENTE DO LIVRO: SUA PÁGINA PRINCIPAL ATUAL
+               ========================================================================== */
+            <div class="pagina papel-pergaminho frente">
+                <header> 
+                    <h1>Um Lugar Onde Escritores dão Vida às Suas Histórias, e os Leitores Acompanham Essa Jornada</h1> 
+                </header> 
+
+                <main>
+                    <h2>Se você está escrevendo um livro, ou se você gosta de ler, então você veio para o lugar certo!!</h2> 
+
+                    <section class="secao-pesquisa">
+                        <p class="instrucao-pesquisa">Explore as histórias já publicadas na nossa comunidade:</p>
+                        <div class="container-busca">
+                            <input type="text" placeholder="Digite o título do livro, autor ou gênero...">
+                            <button type="submit" class="botao-busca">
+                                <i class="fas fa-search"></i> Buscar
+                            </button>
+                        </div>
+                        
+                        <div class="vitrine-livros">
+                            <div class="capa-livro">
+                                <div class="lombada"></div>
+                                <div class="conteudo-capa"><i class="fas fa-heart"></i><span>Romance</span></div>
+                            </div>
+                            <div class="capa-livro">
+                                <div class="lombada"></div>
+                                <div class="conteudo-capa"><i class="fas fa-dragon"></i><span>Fantasia</span></div>
+                            </div>
+                            <div class="capa-livro">
+                                <div class="lombada"></div>
+                                <div class="conteudo-capa"><i class="fas fa-user-astronaut"></i><span>Sci-Fi</span></div>
+                            </div>
+                            <div class="capa-livro">
+                                <div class="lombada"></div>
+                                <div class="conteudo-capa"><i class="fas fa-user-secret"></i><span>Mistério</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="ilustracao-decorativa">
+                        <i class="fas fa-book-open"></i>
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+
+                    <h3>Seja bem-vindo à nossa comunidade de escritores e leitores! Aqui estão alguns motivos para você se juntar a nós:</h3> 
+
+                    <ul> 
+                        <li>Compartilhe suas histórias com uma audiência engajada</li> 
+                        <li>Receba feedback construtivo de leitores e outros escritores</li> 
+                        <li>Acesse recursos e tutoriais para melhorar suas habilidades de escrita</li> 
+                    </ul> 
+
+                    <p class="chamada">Descubra um novo mundo de aventuras e conhecimento!</p> 
+
+                    <!-- Mudamos de link para botão com evento JavaScript -->
+                    <button class="botao-principal" onclick="virarPagina()">Cadastre-se agora</button> 
+                </main>
+            </div>
+
+            /* ==========================================================================
+               VERSO DO LIVRO: O FORMULÁRIO DE CADASTRO (A PRÓXIMA PÁGINA)
+               ========================================================================== */
+            <div class="pagina papel-pergaminho verso">
+                <header>
+                    <h1 class="titulo-cadastro">Inicie Sua Própria Jornada</h1>
+                    <p class="subtitulo-cadastro">Crie sua conta para começar a escrever ou ler histórias incríveis.</p>
+                </header>
+
+                <form class="formulario-cadastro" onsubmit="event.preventDefault(); alert('Cadastro simulado com sucesso!');">
+                    <div class="campo-grupo">
+                        <label><i class="fas fa-user"></i> Nome Completo</label>
+                        <input type="text" placeholder="Como quer ser chamado na comunidade?" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label><i class="fas fa-envelope"></i> E-mail</label>
+                        <input type="email" placeholder="Seu melhor e-mail" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label><i class="fas fa-lock"></i> Senha</label>
+                        <input type="password" placeholder="Escolha uma senha segura" required>
+                    </div>
+
+                    <div class="campo-tipo">
+                        <span class="pergunta-tipo">Você deseja se juntar principalmente como:</span>
+                        <div class="opcoes-tipo">
+                            <label class="opcao-radio">
+                                <input type="radio" name="tipo_usuario" checked>
+                                <span class="custom-radio">Escritor</span>
+                            </label>
+                            <label class="opcao-radio">
+                                <input type="radio" name="tipo_usuario">
+                                <span class="custom-radio">Leitor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="botao-principal">Criar Minha Conta</button>
+                </form>
+
+                <!-- Botão para voltar para a página inicial virando o livro de volta -->
+                <button class="botao-voltar" onclick="virarPagina()">
+                    <i class="fas fa-arrow-left"></i> Voltar para a página inicial
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script simples para controlar a virada de página adicionando uma classe CSS -->
+    <script>
+        function virarPagina() {
+            const livro = document.getElementById('livro');
+            livro.classList.toggle('virado');
+        }
+    </script>
+
+</body> 
+</html>
